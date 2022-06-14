@@ -70,7 +70,7 @@ function load_produk()
                     }
 
                     content += `<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                                    <div class="single-product">
+                                    <div class="single-product shadow">
                                         <div class="product-img">
                                             <a href="" class="${detailIds} product-img-content">
                                                 <img class="default-img" src="${url(key.image)}" alt="${key.name}">

@@ -4,13 +4,15 @@
     <div class="single-slider d-flex">
         <div class="container my-auto">
             <div class="row no-gutters">
-                <div class="col-lg-9 col-12">
-                    <div class="text-inner">
+                <div class="col-sm-12">
+                    <div class="text-inner ">
                         <div class="row">
-                            <div class="col-lg-7 col-12">
-                                <div class="hero-text">
+                            <div class="col-sm-7">
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="bg-white rounded shadow p-5 m-0">
                                     <h1><span>Selamat Datang di </span> {{ env('APP_NAME') }}</h1>
-                                    <p class="m-0">Kami menyediakan berbagai kebutuhan obat padi</p>
+                                    <p class="m-0">Kami menyediakan berbagai macam jenis Pisang </p>
                                 </div>
                             </div>
                         </div>
@@ -21,18 +23,18 @@
     </div>
 </section>
 
-<div class="product-area section">
+<div class="product-area section" style="background: linear-gradient(to right, #ffc938, #fdf58a);">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Produk</h2>
+                    <h2>Produk Kami</h2>
                 </div>
             </div>
         </div>
         <div class="row" id="product--list">
             <span class="col-md-12 d-block text-center">
-                Memuat...
+                Loading...
             </span>
         </div>
         <div id="paging-btn"></div>

@@ -1,33 +1,9 @@
 <header class="header shop">
-    {{-- <div class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-12 col-12">
-                    <div class="top-left">
-                        <ul class="list-main">
-                            <li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-                            <li><i class="ti-email"></i> support@shophub.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-12 col-12">
-                    <div class="right-content">
-                        <ul class="list-main">
-                            <li><i class="ti-location-pin"></i> Store location</li>
-                            <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
-                            <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                            <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <div class="middle-inner">
+    <div class="middle-inner" style="background:linear-gradient(to right,#ffc938,#fce18a);">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-2 col-3">
-                    <div class="logo text-capitalize">
+                    <div class="logo text-capitalize m-0 text-dark">
                         <a href="{{ url('') }}" style="font-size: 25px; font-weight: 600;">{{ env('APP_NAME') }}</a>
                     </div>
                 </div>
@@ -61,10 +37,15 @@
                     @else
                     <div class="right-bar ml-auto">
                         <div class="sinlge-bar">
-                            <a href="{{ route('auth.login') }}" class="btn btn-sm bg-white text-primary p-2 p-md-3 px-md-4">Masuk</a>
+                            <marquee>
+                            <h6 class="text-dark px-5">Pengiriman Only Karawang</h6>
+                            </marquee>
                         </div>
                         <div class="sinlge-bar">
-                            <a href="{{ route('auth.register') }}" class="btn btn-sm bg-white text-dark border p-2 p-md-3 px-md-4">Daftar</a>
+                            <a href="{{ route('auth.login') }}" class="btn btn-sm rounded bg-white text-primary ">Login</a>
+                        </div>
+                        <div class="sinlge-bar">
+                            <a href="{{ route('auth.register') }}" class="btn btn-sm rounded bg-white text-dark border ">Register</a>
                         </div>
                     </div>
                     @endif
