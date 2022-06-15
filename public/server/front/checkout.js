@@ -75,11 +75,11 @@ function request_cart()
                                     <td class="product-des" data-title="Description">
                                         <p class="product-name"><a href="" class="${detailIds}">${key.product.name}</a></p>
                                     </td>
-                                    <td class="price" data-title="Price"><span>Rp${toIdr(key.product.price)}</span></td>
+                                    <td class="price" data-title="Price"><span>Rp. ${toIdr(key.product.price)}</span></td>
                                     <td class="qty" data-title="Qty">
                                         ${key.qty}
                                     </td>
-                                    <td class="total-amount" data-title="Total"><span>Rp${toIdr(key.qty * key.product.price)}</span></td>
+                                    <td class="total-amount" data-title="Total"><span>Rp. ${toIdr(key.qty * key.product.price)}</span></td>
                                 </tr>`
 
                 })

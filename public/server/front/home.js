@@ -15,7 +15,7 @@ function request_addToCart(product_id, qty)
         success: function(res) {
             const Toast = Swal.mixin({
                 toast: true,
-                position: 'top-end',
+                position: 'top-start',
                 showConfirmButton: false,
                 timer: 3000,
                 timerProgressBar: true,
@@ -76,9 +76,6 @@ function load_produk()
                                                 <img class="default-img" src="${url(key.image)}" alt="${key.name}">
                                             </a>
                                             <div class="button-head">
-                                                <div class="product-action order-1">
-                                                    <a title="Detail" href="" class="${detailIds}"><i class=" ti-eye"></i><span>Detail</span></a>
-                                                </div>
                                                 <div class="product-action-2 order-0">
                                                     ${addToCartBtn}
                                                 </div>
@@ -87,7 +84,7 @@ function load_produk()
                                         <div class="product-content">
                                             <h3><a href="" class="${detailIds}">${key.name}</a></h3>
                                             <div class="product-price">
-                                                <span>Rp${toIdr(key.price)}</span>
+                                                <span>Rp. ${toIdr(key.price)}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -102,8 +99,9 @@ function load_produk()
                         e.preventDefault()
                         $('#productDetail #product-detail-img').attr('src',url(key.image))
                         $('#productDetail #product-detail-name').text(key.name)
-                        $('#productDetail #product-detail-price').text(`Rp`+toIdr(key.price))
-                        $('#productDetail #product-detail-description').html(key.description)
+                        $('#productDetail #product-detail-price').text(`Rp. `+toIdr(key.price))
+                        $('#productDetail #product-detail-description').html("Deskripsi : "+key.description)
+                        $('#productDetail #product-detail-weight').html("Berat : "+key.weight)
                         $('#productDetail #product-detail-stock').html(key.stock > 0? `<i class="fa fa-check-circle-o"></i> Stok tersedia` : `<i class="fa fa-times-circle text-danger"></i> Stok kosong`)
                         $('#productDetail').modal('show')
 

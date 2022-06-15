@@ -45,6 +45,9 @@ function requestProducts()
                 }
             },
             {
+                data: 'weight'
+            },
+            {
                 data: null,
                 render: function(key){
                     let btnId = randId(7)
@@ -56,6 +59,7 @@ function requestProducts()
                         $('#modalEdit [name="description"]').val(key.description)
                         $('#modalEdit [name="price"]').val(key.price)
                         $('#modalEdit [name="stock"]').val(key.stock)
+                        $('#modalEdit [name="weight"]').val(key.weight)
                         $('#modalEdit').modal('show')
 
                         $(document).on('submit','#modalEdit form', function(e){
@@ -95,6 +99,7 @@ var inputErrorEl = {
     '#modalAdd .error--description': 'description',
     '#modalAdd .error--price': 'price',
     '#modalAdd .error--stock': 'stock',
+    '#modalAdd .error--weight': 'weight',
 }
 
 function saveProduct()
@@ -106,6 +111,7 @@ function saveProduct()
     data.append('description',$('#modalAdd [name="description"]').val())
     data.append('price',$('#modalAdd [name="price"]').val())
     data.append('stock',$('#modalAdd [name="stock"]').val())
+    data.append('weight',$('#modalAdd [name="weight"]').val())
     $.ajax({
         url: api_url('admin/product'),
         data: data,
@@ -144,6 +150,7 @@ var inputErrorEl2 = {
     '#modalEdit .error--description': 'description',
     '#modalEdit .error--price': 'price',
     '#modalEdit .error--stock': 'stock',
+    '#modalEdit .error--weight': 'weight',
 }
 
 function updateProduct(id)
@@ -155,6 +162,7 @@ function updateProduct(id)
     data.append('description',$('#modalEdit [name="description"]').val())
     data.append('price',$('#modalEdit [name="price"]').val())
     data.append('stock',$('#modalEdit [name="stock"]').val())
+    data.append('weight',$('#modalEdit [name="weight"]').val())
     $.ajax({
         url: api_url('admin/product/'+id+'/update'),
         data: data,

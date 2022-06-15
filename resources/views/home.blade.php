@@ -11,7 +11,7 @@
                             </div>
                             <div class="col-sm-5">
                                 <div class="bg-white rounded shadow p-5 m-0">
-                                    <h1><span>Selamat Datang di </span> {{ env('APP_NAME') }}</h1>
+                                    <h1><span>Selamat Datang di </span> {{ env('APP_NAME') }}</h1><br>
                                     <p class="m-0">Kami menyediakan berbagai macam jenis Pisang </p>
                                 </div>
                             </div>
@@ -26,8 +26,8 @@
 <div class="product-area section" style="background: linear-gradient(to right, #ffc938, #fdf58a);">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="section-title">
+            <div class="col-12 text-center ">
+                <div class="bg-light py-2 rounded">
                     <h2>Produk Kami</h2>
                 </div>
             </div>
@@ -42,7 +42,7 @@
 </div>
 
 <div class="modal fade" id="productDetail" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
@@ -69,6 +69,7 @@
                             <h3 id="product-detail-price">-</h3>
                             <div class="quickview-peragraph mb-3">
                                 <p id="product-detail-description">-</p>
+                                <p id="product-detail-weight">-</p>
                             </div>
                             <div class="quantity d-none" id="product-detail-qty">
                                 <div class="input-group">
@@ -83,10 +84,10 @@
                                             <i class="ti-plus"></i>
                                         </button>
                                     </div>
+                                    <div class="add-to-cart mt-3">
+                                        <a href="#" class="btn d-none bg-dark rounded" id="product-detail-add-to-cart" style="background:#ffc938">Tambah ke keranjang</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <a href="#" class="btn d-none" id="product-detail-add-to-cart">Tambah ke keranjang</a>
                             </div>
                         </div>
                     </div>

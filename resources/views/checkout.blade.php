@@ -49,7 +49,7 @@
                     <div class="col-12">
                         <table class="table shopping-summery" id="cart--data">
                             <thead>
-                                <tr class="main-hading">
+                                <tr class="main-hading bg-warning">
                                     <th width="150px">Produk</th>
                                     <th>Nama</th>
                                     <th class="text-center">Harga</th>
@@ -71,10 +71,13 @@
             <div class="col-lg-4 col-12">
                 <div class="order-details">
                     <div class="single-widget">
-                        <h2 class="mb-3">KURIR</h2>
+                        <h2 class="mb-3">Pengiriman</h2>
                         <div class="content">
-                            <div class="row m-0" id="courier--list"></div>
-                            <small class="text-danger error--courier"></small>
+                            <div class="row m-0">
+                                <div class="col-md-12 text-center">
+                                    <span class="text-dark"><i class="fa fa-check-circle text-success"></i> pengiriman dilakukan dengan COD di sekitar Karawang</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="single-widget">
@@ -92,7 +95,7 @@
                         <div class="content">
                             <ul>
                                 <li>Sub Total<span class="cart--subtotal-pay">Rp0</span></li>
-                                <li>Ongkir<span class="">Rp{{ number_format(env('SHIPPING_PRICE',5000),0,',','.') }}</span></li>
+                                <li>Ongkir<span class="">Rp. {{ number_format(env('SHIPPING_PRICE',5000),0,',','.') }}</span></li>
                                 <li class="last">Total<span class="cart--subtotal-pay">Rp0</span></li>
                             </ul>
                         </div>

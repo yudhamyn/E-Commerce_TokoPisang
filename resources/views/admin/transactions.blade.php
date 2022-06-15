@@ -3,7 +3,7 @@
 <div id="alert-message" class="mb-3"></div>
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Transaksi</h1>
-    <a href="{{ route('admin.transactions.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+    <a href="{{ route('admin.transactions.export') }}" class="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Download Laporan Transaksi</a>
 </div>
 <div class="row">
@@ -12,7 +12,7 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table" id="transaction--data">
-                        <thead class="bg-primary text-white">
+                        <thead class="bg-warning text-white">
                             <tr>
                                 <th width="20px">No</th>
                                 <th width="200px">Pesanan</th>
@@ -97,7 +97,7 @@
                         <div class="col-12">
                             <div class="table-responsive">
                                 <table class="table mb-0">
-                                    <thead class="bg-primary text-white">
+                                    <thead class="bg-warning text-white">
                                         <tr class="main-hading">
                                             <th width="150px">Produk</th>
                                             <th>Nama</th>
@@ -126,12 +126,6 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="mb-3">
-                                <h5 class="mb-2 font-weight-bold text-dark">KURIR</h5>
-                                <div class="content">
-                                    <div class="row" id="courier--list"></div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
                                 <h4 class="mb-2 font-weight-bold text-dark">Pembayaran</h4>
                                 <div class="content">
                                     <div class="row">
@@ -149,7 +143,6 @@
                                 <div class="content">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item d-flex justify-content-between text-dark">Sub Total<span class="text-muted transaction--subtotal">Rp0</span></li>
-                                        <li class="list-group-item d-flex justify-content-between text-dark">Ongkir<span class="text-muted transaction--shipping-price">Rp0</span></li>
                                         <li class="list-group-item border-top border-secondary d-flex justify-content-between text-dark"><span class="title--subtotal-pay">Total </span><span class="transaction--subtotal-pay">Rp0</span></li>
                                     </ul>
                                 </div>
@@ -204,7 +197,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-                <button class="btn btn-primary" type="submit">Ya</button>
+                <button class="btn btn-warning" type="submit">Ya</button>
             </div>
         </div>
     </div>
@@ -220,43 +213,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label for="">No Resi <b id="courier">{courier}</b></label>
-                    <input type="text" id="waybill" class="form-control" placeholder="No Resi">
-                    <small class="text-danger error--waybill"></small>
+                <div class="alert alert-danger p-3">
+                    Apakah anda yakin ingin memproses pesanan ini?
                 </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-                <button class="btn btn-primary" type="submit">Kirim</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalTracking" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Histori Pengiriman</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="tracking--content">
-                    <ul class="tracking--list">
-                        <div class="d-flex align-items-center">
-                            <div class="spinner-border spinner-border-sm text-primary" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <small class="text-primary ml-2">Memuat...</small>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Tutup</button>
+                <button class="btn btn-warning" type="submit">Kirim</button>
             </div>
         </div>
     </div>
@@ -265,13 +228,6 @@
 @endsection
 
 @section('js')
-<script>
-    var trackingUrl = "{{ env('TRACKING_URL','https://rajaongkir.anteikudevs.art/api/waybill') }}", 
-    trackingHeaders = {
-        "Client-Id": '{{ env('TRACKING_CLIENT_ID') }}',
-        "Client-Secret": '{{ env('TRACKING_CLIENT_SECRET') }}',
-    }
-</script>
 <script src="{{ asset('server/panel/transaction.js') }}"></script>
 @endsection
 

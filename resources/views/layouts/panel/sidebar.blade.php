@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background:linear-gradient(to right,#e8b133,#e8b133);">
 
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('') }}">
         <div class="sidebar-brand-text mx-3"> {{ env('APP_NAME') }}</div>

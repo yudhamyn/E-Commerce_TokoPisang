@@ -3,14 +3,13 @@
 <div class="row justify-content-center auth--content">
 
     <div class="col-xl-6 col-lg-6 col-md-12">
-        <h4 class="text-center font-weight-bold"><a href="{{ url('') }}" class="text-decoration-none">{{ env('APP_NAME') }}</a></h4>
         <div class="card o-hidden border-0 shadow-lg my-5 auth--box">
             <div class="card-body p-0">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Silahkan Daftar </h1>
+                                <h1 class="h4 text-gray-900 mb-4">Registrasi Pembeli </h1>
                             </div>
                             <div id="alert-message"></div>
                             <form class="user" id="register--form">
@@ -34,13 +33,13 @@
                                     <input type="password" class="form-control form-control-user" autocomplete="new-field" placeholder="Konfirmasi Password" id="register--password-confirmation">
                                     <small class="text-danger error--password-confirmation"></small>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-user btn-block">
+                                <button type="submit" class="btn btn-warning btn-user btn-block">
                                     Register
                                 </button>
                             </form>
                             <hr>
                             <div class="text-center">
-                                Sudah punya akun? <a class="small text-success" href="{{ route('auth.login') }}">Masuk</a>
+                                Sudah punya akun? <a class="small text-warning" href="{{ route('auth.login') }}">Login</a>
                             </div>
                         </div>
                     </div>

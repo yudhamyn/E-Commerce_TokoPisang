@@ -21,29 +21,12 @@ class CheckoutController extends Controller
             'address.name' => 'required|string',
             'address.phone' => 'required|string',
             'address.address' => 'required',
-            'courier' => 'required'
         ],[
             'address.required' => 'Alamat wajib diisi',
             'address.name.required' => "Nama penerima wajib diisi",
             'address.phone.required' => "No HP penerima wajib diisi",
             'address.address.required' => "Alamat penerima wajib diisi",
-            'courier.required' => 'Kurir belum dipilih'
         ]);
-
-        $courier = [
-            'jne',
-            'jnt',
-            'tiki',
-        ];
-
-        if(!in_array($request->courier,$courier))
-        {
-            $result['status'] = false;
-            $result['message'] = "Kurir yang dipilih tidak valid";
-            return response($result);
-        }
-
-        $courier_data = $this->getCourier($request->courier);
 
         $cart = Cart::where(['user_id' => $user->id,'chosen' => 1]);
 
@@ -75,10 +58,7 @@ class CheckoutController extends Controller
                     'user_id' => $user->id,
                     'user_address_id' => $address_sv->id,
                     'status' => 0,
-                    'courier' => $courier_data['name'],
-                    'courier_code' => $courier_data['code'],
-                    'shipping_price' => env('SHIPPING_PRICE',5000),
-                    'total' => $total + env('SHIPPING_PRICE',5000),
+                    'total' => $total,
                 ]);
 
                 if($transaction_create)
@@ -123,32 +103,5 @@ class CheckoutController extends Controller
         $result['message'] = "Gagal membuat pesanan";
         return response($result);
 
-    }
-
-    private function getCourier($code)
-    {
-        $courier = [
-            [
-                'name' => "JNE",
-                'code' => 'jne'
-            ],
-            [
-                'name' => "J&T",
-                'code' => 'jnt'
-            ],
-            [
-                'name' => "TIKI",
-                'code' => 'tiki'
-            ],
-        ];
-        $data = null;
-        foreach($courier as $key)
-        {
-            if($key['code'] == $code)
-            {
-                $data = $key;
-            }
-        }
-        return $data;
     }
 }

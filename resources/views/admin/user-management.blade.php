@@ -6,7 +6,7 @@
         <h1 class="h3 mb-2 text-gray-800">Manajemen User</h1>
     </div>
     <div class="col-md-6 text-right">
-        <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalAdd">Tambah</button>
+        <button class="btn btn-sm btn-dark" data-toggle="modal" data-target="#modalAdd">Tambah</button>
     </div>
 </div>
 <div class="row">
@@ -15,7 +15,7 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table" id="user--data">
-                        <thead class="bg-primary text-white">
+                        <thead class="bg-warning text-white">
                             <tr>
                                 <th width="20px">No</th>
                                 <th width="150px">Nama</th>

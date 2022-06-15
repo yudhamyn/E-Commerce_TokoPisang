@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set("Asia/Jakarta");
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 

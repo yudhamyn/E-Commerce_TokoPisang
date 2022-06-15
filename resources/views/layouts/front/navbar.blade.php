@@ -10,10 +10,15 @@
 
                 <div class="col-md-10 col-9 d-inline-flex">
                     @if(auth()->user())
-                        <div class="right-bar ml-auto">
+                        <div class="right-bar ml-auto text-dark">
+                        <div class="sinlge-bar">
+                            <marquee>
+                            <h6 class="text-dark px-5">Pengiriman Only Karawang</h6>
+                            </marquee>
+                        </div>
                             <div class="sinlge-bar" id="navbar--user-name">
                                 <a href="" class="single-icon"><i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i>
-                                    <small>{name}</small></a>
+                                    <small></small></a>
                             </div>
                             <div class="sinlge-bar shopping d-none" id="navbar--user-cart">
                                 <a href="{{ route('user.cart') }}" class="single-icon"><i class="ti-bag"></i> <span
@@ -42,10 +47,7 @@
                             </marquee>
                         </div>
                         <div class="sinlge-bar">
-                            <a href="{{ route('auth.login') }}" class="btn btn-sm rounded bg-white text-primary ">Login</a>
-                        </div>
-                        <div class="sinlge-bar">
-                            <a href="{{ route('auth.register') }}" class="btn btn-sm rounded bg-white text-dark border ">Register</a>
+                            <a href="{{ route('auth.login') }}" class="btn btn-sm rounded bg-white text-primary shadow">Mulai Belanja</a>
                         </div>
                     </div>
                     @endif

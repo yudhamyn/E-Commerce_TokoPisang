@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table" id="transaction--data">
-                        <thead class="bg-primary text-white">
+                        <thead class="bg-warning text-white">
                             <tr>
                                 <th width="20px">No</th>
                                 <th width="200px">No Pesanan</th>
@@ -93,7 +93,7 @@
                         <div class="col-12">
                             <div class="table-responsive">
                                 <table class="table mb-0">
-                                    <thead class="bg-primary text-white">
+                                    <thead class="bg-warning text-white">
                                         <tr class="main-hading">
                                             <th width="150px">Produk</th>
                                             <th>Nama</th>
@@ -203,7 +203,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-                <button class="btn btn-primary" type="submit">Ya</button>
+                <button class="btn btn-warning" type="submit">Ya</button>
             </div>
         </div>
     </div>
@@ -230,44 +230,9 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalTracking" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Histori Pengiriman</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="tracking--content">
-                    <ul class="tracking--list">
-                        <div class="d-flex align-items-center">
-                            <div class="spinner-border spinner-border-sm text-primary" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <small class="text-primary ml-2">Memuat...</small>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 @endsection
 
 @section('js')
-<script>
-    var trackingUrl = "{{ env('TRACKING_URL','https://rajaongkir.anteikudevs.art/api/waybill') }}", 
-    trackingHeaders = {
-        "Client-Id": '{{ env('TRACKING_CLIENT_ID') }}',
-        "Client-Secret": '{{ env('TRACKING_CLIENT_SECRET') }}',
-    }
-</script>
 <script src="{{ asset('server/user/transaction.js') }}"></script>
 @endsection
 

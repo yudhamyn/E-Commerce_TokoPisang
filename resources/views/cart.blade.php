@@ -1,12 +1,12 @@
 @extends('layouts.front.index')
 @section('body')
-<div class="breadcrumbs">
+<div class="breadcrumbs pb-0">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="bread-inner">
                     <ul class="bread-list">
-                        <li class="active"><a href="">keranjang</a></li>
+                        <li class="active h3">keranjang</li>
                     </ul>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="col-12">
                 <table class="table shopping-summery" id="cart--data">
                     <thead>
-                        <tr class="main-hading">
+                        <tr class="main-hading bg-warning">
                             <th>Pilih</th>
                             <th width="150px">Produk</th>
                             <th>Nama</th>
@@ -101,13 +101,13 @@
                             <div class="quantity">
                                 <div class="input-group">
                                     <div class="button minus">
-                                        <button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="qty-detail">
+                                        <button type="button" class="btn btn-warning btn-number" disabled="disabled" data-type="minus" data-field="qty-detail">
                                             <i class="ti-minus"></i>
                                         </button>
                                     </div>
                                     <input type="text" name="qty-detail" class="input-number"  data-min="1" data-max="1000" value="1" id="product-detail-cart-qty">
                                     <div class="button plus">
-                                        <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="qty-detail">
+                                        <button type="button" class="btn btn-warning btn-number" data-type="plus" data-field="qty-detail">
                                             <i class="ti-plus"></i>
                                         </button>
                                     </div>

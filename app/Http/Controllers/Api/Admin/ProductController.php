@@ -58,6 +58,7 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
+            'weight' => 'required',
         ]);
 
         $file_path = $request->file('image')->store('public/product-image');
@@ -71,6 +72,7 @@ class ProductController extends Controller
                 'description' => $request->description,
                 'price' => $request->price,
                 'stock' => $request->stock,
+                'weight' => $request->weight,
             ]);
 
             if($sv)
@@ -108,6 +110,7 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
+            'weight' => 'required',
         ]);
 
         if($request->image)
@@ -123,6 +126,7 @@ class ProductController extends Controller
                     'description' => $request->description,
                     'price' => $request->price,
                     'stock' => $request->stock,
+                    'weight' => $request->weight,
                 ]);
 
                 if($sv)
@@ -148,6 +152,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'stock' => $request->stock,
+            'weight' => $request->weight,
         ]);
 
         if($sv)

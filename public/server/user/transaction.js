@@ -42,8 +42,7 @@ function requestTransaction()
                     }else if(key.status == '1'){
                         st_badge = `<span class="badge badge-primary">Diproses</span>`
                     }else if(key.status == '2'){
-                        st_badge = `<span class="badge badge-info">Dikirim</span><br>
-                        <small class="text-primary ${btnPngiriman}" style="cursor: pointer;">Lihat History Pengiriman</small>`
+                        st_badge = `<span class="badge badge-info">Dikirim</span>`
                     }else if(key.status == '3'){
                         st_badge = `<span class="badge badge-success">Diterima</span>`
                     }else if(key.status == '4'){
@@ -55,11 +54,6 @@ function requestTransaction()
                     }else{
                         st_badge = `<span class="badge badge-secondary">Tidak Diketahui</span>`
                     }
-
-                    $(document).on('click','.'+btnPngiriman, function(e){
-                        e.preventDefault()
-                        waybillTracking(key.waybill,key.courier_code)
-                    })
 
                     return st_badge
                 }
@@ -117,15 +111,7 @@ function requestTransaction()
                         $('#modalTransactionDetail #address--phone').html(key.user_address.phone)
                         $('#modalTransactionDetail #address--address').html(key.user_address.address)
 
-                        //courier
-                        $('#modalTransactionDetail #courier--list').html(`<div class="col-md-6 mb-4">
-                                                                                <div class="card card-courier active">
-                                                                                    <img src="${url('static/images/courier/'+key.courier_code+'.png')}" alt="${key.courier}" width="100%">
-                                                                                </div>
-                                                                            </div>`)
-
-                        $('#modalTransactionDetail .transaction--subtotal').html('Rp'+toIdr(key.total-key.shipping_price))
-                        $('#modalTransactionDetail .transaction--shipping-price').html('Rp'+toIdr(key.shipping_price))
+                        $('#modalTransactionDetail .transaction--subtotal').html('Rp'+toIdr(key.total))
                         $('#modalTransactionDetail .transaction--subtotal-pay').html('Rp'+toIdr(key.total))
 
                         if(key.status == '4')
@@ -262,50 +248,6 @@ function transactionDone(id)
                 _notif('#alert-message','success',res.message)
             }else{
                 _notif('#alert-message','danger',res.message)
-            }
-        }
-    })
-}
-
-function waybillTracking(waybill,courier)
-{
-    let loadingRequest = `<div class="d-flex align-items-center">
-                            <div class="spinner-border spinner-border-sm text-primary" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <small class="text-primary ml-2">Memuat...</small>
-                        </div>`
-    $('#modalTracking .tracking--list').html(loadingRequest)
-    $('#modalTracking').modal('show')
-    $.ajax({
-        url: trackingUrl,
-        data:{
-            waybill: waybill,
-            courier: courier
-        },
-        type: 'POST',
-        dataType: 'json',
-        headers: trackingHeaders,
-        error: function() {
-            
-        },
-        success: function(res) {
-            if(res.status)
-            {
-                let content = ''
-                $.each(res.data.manifest, function(i,key){
-                    content += `<li>
-                                    <div class="tracking--detail">
-                                        <div class="tracking--time">${key.manifest_time} ${key.manifest_date}</div>
-                                    </div>
-                                    <div class="tracking--description">${key.manifest_description} ${key.city_name}</div>
-                                </li>`
-                })
-                $('#modalTracking .tracking--list').html(content)
-
-            }else{
-                let loadingRequest = ` <small class="text-danger ml-2">${res.message}</small>`
-                $('#modalTracking .tracking--list').html(loadingRequest)
             }
         }
     })

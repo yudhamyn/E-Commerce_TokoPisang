@@ -3,7 +3,7 @@
 <div class="row justify-content-center auth--content">
 
     <div class="col-xl-6 col-lg-6 col-md-12">
-        <h4 class="text-center font-weight-bold"><a href="{{ url('') }}" class="text-decoration-none">{{ env('APP_NAME') }}</a></h4>
+        <h4 class="text-center font-weight-bold bg-light shadow rounded py-3"><a href="{{ url('') }}" class="text-decoration-none text-warning">{{ env('APP_NAME') }}</a></h4>
         <div class="card o-hidden border-0 shadow-lg my-5 auth--box">
             <div class="card-body p-0">
                 <div class="row">
@@ -30,13 +30,13 @@
                                             Me</label>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-user btn-block">
+                                <button type="submit" class="btn btn-warning btn-user btn-block">
                                     Login
                                 </button>
                             </form>
                             <hr>
                             <div class="text-center">
-                                Belum punya akun? <a class="small text-success" href="{{ route('auth.register') }}">Daftar</a>
+                                Belum punya akun? <a class="small text-warning" href="{{ route('auth.register') }}">Register</a>
                             </div>
                         </div>
                     </div>

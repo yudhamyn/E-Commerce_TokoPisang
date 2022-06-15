@@ -6,7 +6,7 @@
         <h1 class="h3 mb-2 text-gray-800">Produk</h1>
     </div>
     <div class="col-md-6 text-right">
-        <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalAdd">Tambah</button>
+        <button class="btn btn-sm btn-dark" data-toggle="modal" data-target="#modalAdd">Tambah</button>
     </div>
 </div>
 <div class="row">
@@ -15,13 +15,14 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table" id="product--data">
-                        <thead class="bg-primary text-white">
+                        <thead class="bg-warning text-white">
                             <tr>
                                 <th width="20px">No</th>
                                 <th width="150px">Produk</th>
                                 <th>Nama</th>
                                 <th>Harga</th>
                                 <th>Stok</th>
+                                <th>Berat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -78,6 +79,11 @@
                                 <label for="">Stok</label>
                                 <input type="number" name="stock" class="form-control" placeholder="Masukkan stok produk">
                                 <small class="text-danger error--stock"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Berat</label>
+                                <input type="text" name="weight" class="form-control" placeholder="Masukkan berat produk">
+                                <small class="text-danger error--weight"></small>
                             </div>
                         </div>
                     </div>
@@ -136,6 +142,11 @@
                                 <label for="">Stok</label>
                                 <input type="number" name="stock" class="form-control" placeholder="Masukkan stok produk">
                                 <small class="text-danger error--stock"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Berat</label>
+                                <input type="text" name="weight" class="form-control" placeholder="Masukkan berat produk">
+                                <small class="text-danger error--weight"></small>
                             </div>
                         </div>
                     </div>

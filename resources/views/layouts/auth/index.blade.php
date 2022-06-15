@@ -30,7 +30,7 @@
         }
         body {
             background: url("{{ asset('static/images/bg.png') }}");
-            background-size: cover;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
         }
     </style>

@@ -22,9 +22,7 @@ class TransactionController extends Controller
         {
             $transaction = $transaction->where(function($query) use ($search){
                 $query->orWhere('total','like',"%$search%")
-                ->orWhere('purchase_order','like',"%$search%")
-                ->orWhere('courier','like',"%$search%")
-                ->orWhere('waybill','like',"%$search%");
+                ->orWhere('purchase_order','like',"%$search%");
             });
         }
 

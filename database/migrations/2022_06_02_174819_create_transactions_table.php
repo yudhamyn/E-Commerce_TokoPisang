@@ -26,10 +26,6 @@ class CreateTransactionsTable extends Migration
 
             $table->tinyInteger('status')->comment('0 = pending, 1 = process, 2 = sent, 3 = received, 4 = closed, 5 = rejected, 6 = canceled');
 
-            $table->string('courier');
-            $table->string('courier_code');
-            $table->bigInteger('shipping_price');
-
             $table->bigInteger('total');
             $table->string('waybill')->nullable();
             

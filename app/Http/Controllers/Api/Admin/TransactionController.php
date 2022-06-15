@@ -23,9 +23,7 @@ class TransactionController extends Controller
         {
             $transaction = $transaction->where(function($query) use ($search){
                 $query->whereRelation('user','name','like',"%$search%")
-                ->orWhere('total','like',"%$search%")
-                ->orWhere('courier','like',"%$search%")
-                ->orWhere('waybill','like',"%$search%");
+                ->orWhere('total','like',"%$search%");
             });
         }
 
@@ -135,10 +133,6 @@ class TransactionController extends Controller
             return response($result);
         }
 
-        $request->validate([
-            'waybill' => 'required|unique:App\Models\Transaction,waybill'
-        ]);
-
         if($transaction->status != 1)
         {
             $result['status'] = false;
@@ -147,8 +141,7 @@ class TransactionController extends Controller
         }
 
         $up = $transaction->update([
-            'status' => 2,
-            'waybill' => $request->waybill
+            'status' => 2
         ]);
         
         if($up)
@@ -202,13 +195,10 @@ class TransactionController extends Controller
 
             $sheet->setCellValue("A$data_no", $key->purchase_order);
             $sheet->setCellValue("B$data_no", $key->user->name);
-            $sheet->setCellValue("C$data_no", $key->courier);
-            $sheet->setCellValue("D$data_no", $key->shipping_price);
-            $sheet->setCellValue("E$data_no", $key->waybill);
-            $sheet->setCellValue("F$data_no", $key->created_at);
-            $sheet->setCellValue("G$data_no", $key->total);
-            $sheet->setCellValue("H$data_no", "Cash On Delivery (COD)");
-            $sheet->setCellValue("I$data_no", $status);
+            $sheet->setCellValue("C$data_no", $key->created_at);
+            $sheet->setCellValue("D$data_no", $key->total);
+            $sheet->setCellValue("E$data_no", "Cash On Delivery (COD)");
+            $sheet->setCellValue("F$data_no", $status);
 
             $data_no++;
         }
