@@ -35,7 +35,7 @@ Route::middleware(ApiAccess::class)->group(function(){
     Route::middleware(ApiAccessAdmin::class)->prefix('admin')->group(function(){
 
         Route::get('/dashboard',[Admin\DashboardController::class,'index']);
-        Route::get('/dashboard/interested-product',[Admin\DashboardController::class,'interestedProduct']);
+        Route::get('/dashboard/transaction-product',[Admin\DashboardController::class,'transactionProduct']);
 
         Route::get('/transactions',[Admin\TransactionController::class,'index']);
         Route::put('/transaction/{id}/process',[Admin\TransactionController::class,'process']);

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use DB;
 
 class DashboardController extends Controller
 {
@@ -23,23 +24,16 @@ class DashboardController extends Controller
 
     }
 
-    public function interestedProduct(Request $request, Product $product)
+    public function transactionProduct(Request $request, Product $product)
     {
 
         if($product->count())
         {
 
-            $data = [];
-            foreach($product->get() as $key){
-                $sold = $key->transaction_detail->sum('qty');
-                $percent = ($key->stock == 0? 100 : round(($sold/$key->stock)*100));
-                $data[] = [
-                    'name' => $key->name,
-                    'stock' => $key->stock,
-                    'sold' => $sold,
-                    'percent' => $percent
-                ];
-            }
+            $data = DB::table("transactions")
+            ->selectRaw("COUNT(id) as total_monthly,MONTH(created_at) as month")
+            ->groupByRaw("MONTH(created_at), YEAR(created_at)")->get();
+            
             return response([
                 'status' => true,
                 'message' => "OK",

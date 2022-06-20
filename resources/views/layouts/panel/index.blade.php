@@ -66,6 +66,7 @@
 
     <script src="{{ asset('static/panel') }}/vendor/jquery/jquery.min.js"></script>
     <script src="{{ asset('static/panel') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('static/panel') }}/vendor/chart.js/Chart.min.js"></script>
     <script src="{{ asset('static/panel/DataTables/datatables.min.js') }}"></script>
     <script src="{{ asset('static/panel') }}/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="{{ asset('static/panel') }}/js/app.min.js"></script>
