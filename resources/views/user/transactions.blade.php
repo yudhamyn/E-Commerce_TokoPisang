@@ -233,6 +233,9 @@
 @endsection
 
 @section('js')
+<script>
+    var shippingPrice = {{env('SHIPPING_PRICE')}}
+</script>
 <script src="{{ asset('server/user/transaction.js') }}"></script>
 @endsection
 

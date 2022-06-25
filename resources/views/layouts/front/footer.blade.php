@@ -9,39 +9,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-12">
-                    <div class="single-footer links">
-                        <h4>Information</h4>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Help</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-12">
-                    <div class="single-footer links">
-                        <h4>Customer Service</h4>
-                        <ul>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Money-back</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-footer social">
                         <h4>Get In Tuch</h4>
                         <div class="contact">
                             <ul>
-                                <li>NO. 342 - London Oxford Street.</li>
-                                <li>012 United Kingdom.</li>
-                                <li>info@eshop.com</li>
-                                <li>+032 3456 7890</li>
+                                <li>Jln raya Kosambi-Telagasari. Dusun Kawali Rt 071/020, Desa Duren, Kec. Klari, Kab. Karawang. 41371..</li>
+                                <li>No telp : 08159436650 .</li>
+                                <li>Email : milaapriyanti184@gmail.com</li>
                             </ul>
                         </div>
                         <ul>

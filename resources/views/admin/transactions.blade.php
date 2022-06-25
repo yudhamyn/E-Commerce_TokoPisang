@@ -143,6 +143,7 @@
                                 <div class="content">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item d-flex justify-content-between text-dark">Sub Total<span class="text-muted transaction--subtotal">Rp0</span></li>
+                                        <li class="list-group-item d-flex justify-content-between text-dark">Ongkir<span class="text-muted transaction--shipping-price">Rp0</span></li>
                                         <li class="list-group-item border-top border-secondary d-flex justify-content-between text-dark"><span class="title--subtotal-pay">Total </span><span class="transaction--subtotal-pay">Rp0</span></li>
                                     </ul>
                                 </div>
@@ -228,6 +229,9 @@
 @endsection
 
 @section('js')
+<script>
+    var shippingPrice = {{env('SHIPPING_PRICE')}}
+</script>
 <script src="{{ asset('server/panel/transaction.js') }}"></script>
 @endsection
 

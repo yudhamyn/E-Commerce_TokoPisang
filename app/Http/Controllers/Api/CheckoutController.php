@@ -58,7 +58,8 @@ class CheckoutController extends Controller
                     'user_id' => $user->id,
                     'user_address_id' => $address_sv->id,
                     'status' => 0,
-                    'total' => $total,
+                    'shipping_price' => env('SHIPPING_PRICE',5000),
+                    'total' => $total + env('SHIPPING_PRICE',5000),
                 ]);
 
                 if($transaction_create)

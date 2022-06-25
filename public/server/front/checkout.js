@@ -85,6 +85,7 @@ function request_cart()
                 })
                 $('#cart--data tbody').html(content)
 
+                $('.cart--subtotal').text('Rp'+toIdr(res.details.subtotal))
                 $('.cart--subtotal-pay').text('Rp'+toIdr(res.details.subtotal + shippingPrice))
                 if(res.details.subtotal == 0)
                 {

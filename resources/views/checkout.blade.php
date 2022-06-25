@@ -94,7 +94,7 @@
                         <h2>TOTAL KERANJANG</h2>
                         <div class="content">
                             <ul>
-                                <li>Sub Total<span class="cart--subtotal-pay">Rp0</span></li>
+                                <li>Sub Total<span class="cart--subtotal">Rp0</span></li>
                                 <li>Ongkir<span class="">Rp. {{ number_format(env('SHIPPING_PRICE',5000),0,',','.') }}</span></li>
                                 <li class="last">Total<span class="cart--subtotal-pay">Rp0</span></li>
                             </ul>

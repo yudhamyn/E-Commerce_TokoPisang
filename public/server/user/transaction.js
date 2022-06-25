@@ -111,7 +111,8 @@ function requestTransaction()
                         $('#modalTransactionDetail #address--phone').html(key.user_address.phone)
                         $('#modalTransactionDetail #address--address').html(key.user_address.address)
 
-                        $('#modalTransactionDetail .transaction--subtotal').html('Rp'+toIdr(key.total))
+                        $('#modalTransactionDetail .transaction--shipping-price').html('Rp'+toIdr(shippingPrice))
+                        $('#modalTransactionDetail .transaction--subtotal').html('Rp'+toIdr(key.total - shippingPrice))
                         $('#modalTransactionDetail .transaction--subtotal-pay').html('Rp'+toIdr(key.total))
 
                         if(key.status == '4')
