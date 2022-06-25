@@ -15,6 +15,12 @@ $(document).on('keyup','.chat--page .chat--page-message textarea', function(){
     })
 })
 
+$(document).on('click','.chat--page .chat--page-message .close-message-icon', function(e){
+    e.preventDefault()
+    $(this).parents('.chat--page-message').addClass('d-none')
+    $('#chat--list .chat--page-item').removeClass('active')
+})
+
 function bodyScrollMsg()
 {
     $('.chat--page .chat--page-message .message--body').scrollTop($('.chat--page .chat--page-message .message--body')[0].scrollHeight,'slow')

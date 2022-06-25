@@ -13,6 +13,9 @@
     <div class="chat--page-message d-none" id="chat--message-content">
 
         <div class="message--header">
+            <span class="close-message-icon">
+                <i class="fa fa-angle-left"></i>
+            </span>
             <div class="header--img">
                 <img src="{{ asset('static/panel') }}/img/undraw_profile.svg" alt="" width="100%">
             </div>
@@ -71,6 +74,7 @@
         overflow: hidden;
         box-shadow: 0 0 4px rgba(0,0,0,.15);
         margin-bottom: 20px;
+        position: relative;
     }
 
     .chat--page .chat--page-list::-webkit-scrollbar {
@@ -149,6 +153,29 @@
     .chat--page .chat--page-message {
         flex: 1;
         width: 100%;
+        background: #fff;
+    }
+
+    .close-message-icon {
+        display: none;
+    }
+
+    @media screen and (max-width: 720px){
+        .chat--page .chat--page-message {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .close-message-icon {
+            display: flex;
+            align-items:  center;
+            justify-content: center;
+            width: 40px;
+            height:  40px;
+            border-radius: 8px;
+            background: #fff;
+            margin-right:  10px;
+        }
     }
     
     .chat--page .chat--page-message .message--header {
