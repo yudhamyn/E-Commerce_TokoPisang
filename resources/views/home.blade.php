@@ -32,12 +32,12 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="product--list">
+        <div class="row mb-3" id="product--list">
             <span class="col-md-12 d-block text-center">
                 Loading...
             </span>
         </div>
-        <div id="paging-btn"></div>
+        <div class="d-flex justify-content-center" id="paging-btn"></div>
     </div>
 </div>
 

@@ -41,10 +41,10 @@ function request_addToCart(product_id, qty)
     })
 }
 
-function load_produk()
+function load_produk(page = 1)
 {
     $.ajax({
-        url: api_url('product'),
+        url: api_url('product')+'?page='+page,
         type: 'GET',
         dataType: 'json',
         headers: HttpHeaders,
@@ -126,7 +126,28 @@ function load_produk()
                     })
                 })
 
-                $('#product--list').html(content)
+                let paging = res.pagination,
+                    pagingBtnId = randId(9),
+                    pagingContent = `<button class="btn btn-sm btn-primary ${pagingBtnId}">Lihat Selengkapnya</button>`
+                if(paging.current_page == paging.last_page)
+                {
+                    $('#paging-btn').html('')
+                }else{
+                    $('#paging-btn').html(pagingContent)
+                }
+
+                $(document).on('click','.'+pagingBtnId, function(e){
+                    e.preventDefault()
+                    load_produk(paging.current_page+1)
+                })
+
+                if(paging.start == 0)
+                {                
+                    $('#product--list').html(content)
+                }else{
+                    $('#product--list').append(content)
+                }
+
 
             }
 
