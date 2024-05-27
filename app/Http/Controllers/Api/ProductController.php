@@ -30,6 +30,7 @@ class ProductController extends Controller
             $result['message'] = "OK";
             $result['data'] = $products;
             $result['action'] = ($user? ($user->level_id == 1? false : true) : false);
+            $result['pagination'] = $pagination;
             return response($result);
         }
 
